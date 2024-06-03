@@ -1,6 +1,6 @@
 ﻿namespace TictacToe
 {
-    partial class Form1
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.TIcTacToe_Board = new System.Windows.Forms.FlowLayoutPanel();
             this.cell_00 = new System.Windows.Forms.PictureBox();
             this.cell_01 = new System.Windows.Forms.PictureBox();
@@ -40,12 +41,12 @@
             this.cell_22 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.playerName_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.O_Score = new System.Windows.Forms.Label();
             this.X_Score = new System.Windows.Forms.Label();
-            this.PlayerTurns = new System.Windows.Forms.Label();
+            this.back_Button = new System.Windows.Forms.PictureBox();
             this.TIcTacToe_Board.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cell_00)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_01)).BeginInit();
@@ -57,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cell_21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_22)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.back_Button)).BeginInit();
             this.SuspendLayout();
             // 
             // TIcTacToe_Board
@@ -78,7 +80,7 @@
             // 
             // cell_00
             // 
-            this.cell_00.BackColor = System.Drawing.SystemColors.Control;
+            this.cell_00.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
             this.cell_00.InitialImage = null;
             this.cell_00.Location = new System.Drawing.Point(3, 3);
             this.cell_00.Name = "cell_00";
@@ -90,7 +92,7 @@
             // 
             // cell_01
             // 
-            this.cell_01.BackColor = System.Drawing.SystemColors.Control;
+            this.cell_01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
             this.cell_01.Location = new System.Drawing.Point(159, 3);
             this.cell_01.Name = "cell_01";
             this.cell_01.Padding = new System.Windows.Forms.Padding(25);
@@ -101,7 +103,7 @@
             // 
             // cell_02
             // 
-            this.cell_02.BackColor = System.Drawing.SystemColors.Control;
+            this.cell_02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
             this.cell_02.Location = new System.Drawing.Point(315, 3);
             this.cell_02.Name = "cell_02";
             this.cell_02.Padding = new System.Windows.Forms.Padding(25);
@@ -112,7 +114,7 @@
             // 
             // cell_10
             // 
-            this.cell_10.BackColor = System.Drawing.SystemColors.Control;
+            this.cell_10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
             this.cell_10.Location = new System.Drawing.Point(3, 159);
             this.cell_10.Name = "cell_10";
             this.cell_10.Padding = new System.Windows.Forms.Padding(25);
@@ -123,7 +125,7 @@
             // 
             // cell_11
             // 
-            this.cell_11.BackColor = System.Drawing.SystemColors.Control;
+            this.cell_11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
             this.cell_11.Location = new System.Drawing.Point(159, 159);
             this.cell_11.Name = "cell_11";
             this.cell_11.Padding = new System.Windows.Forms.Padding(25);
@@ -134,7 +136,7 @@
             // 
             // cell_12
             // 
-            this.cell_12.BackColor = System.Drawing.SystemColors.Control;
+            this.cell_12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
             this.cell_12.Location = new System.Drawing.Point(315, 159);
             this.cell_12.Name = "cell_12";
             this.cell_12.Padding = new System.Windows.Forms.Padding(25);
@@ -145,7 +147,7 @@
             // 
             // cell_20
             // 
-            this.cell_20.BackColor = System.Drawing.SystemColors.Control;
+            this.cell_20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
             this.cell_20.Location = new System.Drawing.Point(3, 315);
             this.cell_20.Name = "cell_20";
             this.cell_20.Padding = new System.Windows.Forms.Padding(25);
@@ -156,7 +158,7 @@
             // 
             // cell_21
             // 
-            this.cell_21.BackColor = System.Drawing.SystemColors.Control;
+            this.cell_21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
             this.cell_21.Location = new System.Drawing.Point(159, 315);
             this.cell_21.Name = "cell_21";
             this.cell_21.Padding = new System.Windows.Forms.Padding(25);
@@ -167,7 +169,7 @@
             // 
             // cell_22
             // 
-            this.cell_22.BackColor = System.Drawing.SystemColors.Control;
+            this.cell_22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
             this.cell_22.Location = new System.Drawing.Point(315, 315);
             this.cell_22.Name = "cell_22";
             this.cell_22.Padding = new System.Windows.Forms.Padding(25);
@@ -180,12 +182,12 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.playerName_label);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.O_Score);
             this.panel1.Controls.Add(this.X_Score);
-            this.panel1.Location = new System.Drawing.Point(15, 12);
+            this.panel1.Location = new System.Drawing.Point(15, 75);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(468, 71);
             this.panel1.TabIndex = 2;
@@ -195,18 +197,18 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(396, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 16);
+            this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Player O";
+            this.label4.Text = "Computer";
             // 
-            // label3
+            // playerName_label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Player X";
+            this.playerName_label.AutoSize = true;
+            this.playerName_label.Location = new System.Drawing.Point(12, 9);
+            this.playerName_label.Name = "playerName_label";
+            this.playerName_label.Size = new System.Drawing.Size(57, 16);
+            this.playerName_label.TabIndex = 4;
+            this.playerName_label.Text = "Player X";
             // 
             // label2
             // 
@@ -232,7 +234,7 @@
             // 
             this.O_Score.AutoSize = true;
             this.O_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.O_Score.Location = new System.Drawing.Point(257, 9);
+            this.O_Score.Location = new System.Drawing.Point(278, 9);
             this.O_Score.Name = "O_Score";
             this.O_Score.Size = new System.Drawing.Size(50, 54);
             this.O_Score.TabIndex = 1;
@@ -253,26 +255,29 @@
             this.X_Score.Text = "0";
             this.X_Score.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PlayerTurns
+            // back_Button
             // 
-            this.PlayerTurns.AutoSize = true;
-            this.PlayerTurns.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerTurns.Location = new System.Drawing.Point(12, 117);
-            this.PlayerTurns.Name = "PlayerTurns";
-            this.PlayerTurns.Size = new System.Drawing.Size(272, 42);
-            this.PlayerTurns.TabIndex = 4;
-            this.PlayerTurns.Text = "Player X\'s Turn";
+            this.back_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(242)))), ((int)(((byte)(254)))));
+            this.back_Button.Image = ((System.Drawing.Image)(resources.GetObject("back_Button.Image")));
+            this.back_Button.Location = new System.Drawing.Point(15, 12);
+            this.back_Button.Name = "back_Button";
+            this.back_Button.Size = new System.Drawing.Size(60, 50);
+            this.back_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.back_Button.TabIndex = 3;
+            this.back_Button.TabStop = false;
+            this.back_Button.Click += new System.EventHandler(this.back_Button_Click);
             // 
-            // Form1
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(25)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(494, 646);
-            this.Controls.Add(this.PlayerTurns);
+            this.Controls.Add(this.back_Button);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TIcTacToe_Board);
-            this.Name = "Form1";
-            this.Text = "AZIL ROTONI";
+            this.Name = "Game";
+            this.Text = "AZIL ROTONI - 10 Hands-on Activity 2";
             this.TIcTacToe_Board.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cell_00)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cell_01)).EndInit();
@@ -285,8 +290,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cell_22)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.back_Button)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -306,10 +311,10 @@
         private System.Windows.Forms.Label X_Score;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label O_Score;
-        private System.Windows.Forms.Label PlayerTurns;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label playerName_label;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox back_Button;
     }
 }
 

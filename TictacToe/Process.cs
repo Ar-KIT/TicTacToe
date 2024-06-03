@@ -28,9 +28,9 @@ namespace TictacToe
             }
         }
 
-        protected bool IsValidMove(int row, int col)
+        public bool IsValidMove(int row, int col)
         {
-            return row >= 0 && row < 3 && col >= 0 && col < 3 && board[row, col] == null;
+            return board[row, col] == null;
         }
 
         public void MakeMove(int row, int col)
@@ -48,7 +48,7 @@ namespace TictacToe
             }
         }
 
-        protected void SwitchPlayer()
+        public void SwitchPlayer()
         {
             currentPlayer = (currentPlayer == "X") ? "O" : "X";
         }
@@ -70,6 +70,7 @@ namespace TictacToe
             {
                 return "win";
             }
+
             bool isDraw = true;
             for (int i = 0; i < 3; i++)
             {
@@ -99,17 +100,6 @@ namespace TictacToe
     }
 
     public class Board : Process
-    {
-        public override void PlayMove(int row, int col)
-        {
-            if (IsValidMove(row, col))
-            {
-                MakeMove(row, col);
-            }
-        }
-    }
-
-    public class Players : Process
     {
         public override void PlayMove(int row, int col)
         {
